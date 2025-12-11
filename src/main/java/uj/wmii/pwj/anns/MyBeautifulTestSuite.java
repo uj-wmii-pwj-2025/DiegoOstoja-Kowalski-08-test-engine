@@ -3,11 +3,15 @@ package uj.wmii.pwj.anns;
 public class MyBeautifulTestSuite {
 
     @MyTest
-    public void testSoemthing() {
+    public void testSomething() {
         System.out.println("I'm testing something!");
     }
 
-    @MyTest(params = {"a param", "b param", "c param. Long, long C param."})
+    @MyTest(params = {
+        @ParamList({"test 1"}),
+        @ParamList({"test 2"}),
+        @ParamList({"extra cool test 3 :D"})
+    })
     public void testWithParam(String param) {
         System.out.printf("I was invoked with parameter: %s\n", param);
     }
@@ -17,7 +21,7 @@ public class MyBeautifulTestSuite {
     }
 
     @MyTest
-    public void imFailue() {
+    public void imFailure() {
         System.out.println("I AM EVIL.");
         throw new NullPointerException();
     }

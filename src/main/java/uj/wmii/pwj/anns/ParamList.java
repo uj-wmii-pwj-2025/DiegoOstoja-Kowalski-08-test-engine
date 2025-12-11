@@ -5,12 +5,8 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface MyTest {
-    ParamList[] params() default {};
-    String[] expected() default {};
+public @interface ParamList {
+    String[] value();
 }
-
-
